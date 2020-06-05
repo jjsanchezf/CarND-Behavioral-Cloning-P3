@@ -52,7 +52,7 @@ The model.py file contains the code for loading the necessary data points, as we
 
 The model consists of 5 convolution neural network with 3x3 and 5x5 filter sizes and depths between 24 and 64 (model.py lines 143-148). 
 
-Each CNN includes a RELU activation layer to introduce nonlinearity. Before the CNN, the data is normalized in the model using a Keras lambda layer (code line 140), and then passed through cropping layer (code line 142) to reduce the amount of noise and unnecessary data to be processed.
+Each CNN includes a RELU activation layer to introduce nonlinearity. Before the CNN, the data is normalized in the model using a Keras lambda layer (code line 140), and then passed through a cropping layer (code line 142) to reduce the amount of noise and unnecessary data to be processed.
 
 #### 2. Attempts to reduce overfitting in the model
 
@@ -73,8 +73,6 @@ Training data was chosen to keep the vehicle driving on the road. Around 4 laps 
 ### Model Architecture and Training Strategy
 
 #### 1. Solution Design Approach
-
-The overall strategy for deriving a model architecture was to ...
 
 As recommended by the videos, and the PDF file provided, the convolution neural network model published by Nvidia was used. This CNN was developed to train the steering agent from a forward-facing camera therefore, this model fits the problem to solve exactly, so it is a good choice for this project.
 
