@@ -13,7 +13,7 @@ from keras.optimizers import Adam
 
 
 #initialize flags
-load_model_for_retraining = True
+load_model_for_retraining = False
 use_3cams=True
 use_flip=True
 partial_data=1 #use a fraction of the total images
@@ -35,7 +35,7 @@ Data loading script provided below.
 samples = []
 data_directory = '../../../opt/carnd_p3/data/IMG/'
 
-driving_log_path = 'driving_log_Track_2.csv'
+driving_log_path = 'driving_log.csv'
 
 with open(driving_log_path) as csvfile:
 	print('reading provided driving log')
@@ -86,7 +86,7 @@ num_frames = len(X_train)
 # First lets shuffle the dataset, as we added lots of non-zero elements to the end
 np.random.shuffle(X_train)
 print('Splitting driving log samples into training and validation samples')
-training_samples, validation_samples =train_test_split(X_train, test_size=0.25)
+training_samples, validation_samples =train_test_split(X_train, test_size=0.2)
 print('{} training samples split'.format(len(training_samples)))
 print('{} validation samples split'.format(len(validation_samples)))
 # Define the generator function that can be used to get batches of samples
